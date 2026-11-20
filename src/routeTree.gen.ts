@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppointmentConfirmationRouteImport } from './routes/appointment-confirmation'
+import { Route as AppointmentsRouteImport } from './routes/appointments'
+import { Route as DoctorsRouteImport } from './routes/doctors'
+import { Route as ReceptionistRouteImport } from './routes/receptionist'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppointmentConfirmationRoute = AppointmentConfirmationRouteImport.update({
+  id: '/appointment-confirmation',
+  path: '/appointment-confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppointmentsRoute = AppointmentsRouteImport.update({
+  id: '/appointments',
+  path: '/appointments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsRoute = DoctorsRouteImport.update({
+  id: '/doctors',
+  path: '/doctors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceptionistRoute = ReceptionistRouteImport.update({
+  id: '/receptionist',
+  path: '/receptionist',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/appointment-confirmation': typeof AppointmentConfirmationRoute
+  '/appointments': typeof AppointmentsRoute
+  '/doctors': typeof DoctorsRoute
+  '/receptionist': typeof ReceptionistRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/appointment-confirmation': typeof AppointmentConfirmationRoute
+  '/appointments': typeof AppointmentsRoute
+  '/doctors': typeof DoctorsRoute
+  '/receptionist': typeof ReceptionistRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/appointment-confirmation': typeof AppointmentConfirmationRoute
+  '/appointments': typeof AppointmentsRoute
+  '/doctors': typeof DoctorsRoute
+  '/receptionist': typeof ReceptionistRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/appointment-confirmation'
+    | '/appointments'
+    | '/doctors'
+    | '/receptionist'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/appointment-confirmation'
+    | '/appointments'
+    | '/doctors'
+    | '/receptionist'
+  id:
+    | '__root__'
+    | '/'
+    | '/appointment-confirmation'
+    | '/appointments'
+    | '/doctors'
+    | '/receptionist'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppointmentConfirmationRoute: typeof AppointmentConfirmationRoute
+  AppointmentsRoute: typeof AppointmentsRoute
+  DoctorsRoute: typeof DoctorsRoute
+  ReceptionistRoute: typeof ReceptionistRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/appointment-confirmation': {
+      id: '/appointment-confirmation'
+      path: '/appointment-confirmation'
+      fullPath: '/appointment-confirmation'
+      preLoaderRoute: typeof AppointmentConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/appointments': {
+      id: '/appointments'
+      path: '/appointments'
+      fullPath: '/appointments'
+      preLoaderRoute: typeof AppointmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors': {
+      id: '/doctors'
+      path: '/doctors'
+      fullPath: '/doctors'
+      preLoaderRoute: typeof DoctorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/receptionist': {
+      id: '/receptionist'
+      path: '/receptionist'
+      fullPath: '/receptionist'
+      preLoaderRoute: typeof ReceptionistRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppointmentConfirmationRoute: AppointmentConfirmationRoute,
+  AppointmentsRoute: AppointmentsRoute,
+  DoctorsRoute: DoctorsRoute,
+  ReceptionistRoute: ReceptionistRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
