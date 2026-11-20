@@ -1,14 +1,44 @@
-# Welcome to your Lovable project
+# MediCare Connect
+
+Create a modern, professional and beginner-friendly web application called "MediCare AI – Smart Hospital Reception System".
+
+This application should help patients book hospital appointments and interact with an AI receptionist.
+
+Design requirements:
+
+Clean white and light blue theme.
+
+Professional hospital dashboard.
+
+Modern navigation bar.
+
+Attractive homepage with a welcome message.
+
+Patient appointment booking section.
+
+Doctor directory with doctor names and specializations.
+
+AI receptionist chatbot section.
+
+Appointment confirmation page.
+
+Add sample doctors and sample appointment data.
+
+Make the website responsive for desktop and mobile.
+
+Use simple navigation and an attractive, easy-to-understand interface.
+
+For now, create the frontend design with sample data. Do not add real patient data or claim to provide medical diagnosis.
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/9c9967d4-41d8-489d-a960-230dfdc9c318).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +50,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
